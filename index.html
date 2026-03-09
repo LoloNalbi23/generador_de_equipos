@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generador de Equipos</title>
+    <script src="script.js" defer></script>
+    <link rel="stylesheet" href="style.css">
+    <link rel="manifest" href="manifest.json">
+    <script>
+        if('serviceWorker' in navigator)
+        navigator.serviceWorker.register('./service-worker.js');
+    </script>
+</head>
+<body>
+    <div id="container">
+        <h1>Generador de Equipos</h1>
+
+    <h4>Genera tus equipos rapido y sin retraso</h4>
+
+    <label for="name">Nombre</label>
+    <input type="text" id="name">
+
+    <label for="valor">Valor</label>
+    <input type="number" id="valor">
+
+    <button id="add">Agregar</button>
+
+    <ul id="names"></ul>
+
+    <button id="generar">Generar Equipos</button>
+
+    <div id="teams"></div>
+
+    <button id="lista">Guardar lista</button>
+    <button id="borrar_l">Borrar lista</button>
+
+    </div>
+    
+</body>
+</html>
