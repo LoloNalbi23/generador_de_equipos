@@ -4,6 +4,7 @@ let btnb = document.getElementById("borrar")
 let inputs = document.getElementById("name")
 let btnl = document.getElementById("lista")
 let btne = document.getElementById("borrar_l")
+let btnc = document.getElementById("cargar")
 let names = []
 let listas = JSON.parse(localStorage.getItem('listas')) || {}
 let equipo1 = []
@@ -11,9 +12,33 @@ let equipo2 = []
 let total1 = 0
 let total2 = 0
 
-if(listas){
-    console.log(listas)
-}
+btnc.addEventListener("click", () =>{
+    const nombre = prompt('Nombre de la lista:')
+    if(!nombre) return
+    if(listas[nombre]){
+        console.log(listas)
+        names=listas[nombre]
+        console.log(names)
+
+        //Obtengo y limpio la lista
+        let lista = document.getElementById("names")
+        lista.innerHTML = ""
+        
+        //Muestro la lista cargada
+        for(let i=0;i<names.length;i++){
+            let li = document.createElement("li")
+            li.textContent = `${names[i].n}: ${parseFloat(names[i].v)}`
+            lista.appendChild(li)
+        }
+    } else {
+        console.log("No esta esa lista")
+        Swal.fire({
+            title: "Error",
+            text: "No existe esa lista",
+            icon: "error"
+});
+    }
+})
 
 btne.addEventListener("click", () =>{
     const nombre = prompt('Nombre de la lista:')

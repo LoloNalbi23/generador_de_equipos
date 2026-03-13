@@ -54,6 +54,8 @@ h1 {
   margin-bottom: -8px;
 }
 
+#borrar_l:hover { background: rgba(255,79,79,.08); border-color: var(--danger); }
+
 h4 {
   font-weight: 400;
   font-size: 14px;
@@ -145,6 +147,15 @@ button {
 #generar:hover { filter: brightness(1.1); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(200,241,53,.2); }
 #generar:active { transform: translateY(0); }
 
+#cargar {
+  background: var(--surface2) !important;
+  color: var(--text) !important;
+  border: 1.5px solid var(--border) !important;
+  width: 100% !important;
+}
+
+#cargar:hover { border-color: var(--accent); color: var(--accent); } 
+
 #save {
   background: var(--surface2);
   color: var(--text);
@@ -170,7 +181,6 @@ button {
   flex: 1;
 }
 
-#borrar_l:hover { background: rgba(255,79,79,.08); border-color: var(--danger); }
 
 /* Fila de botones lista/borrar */
 #container > #lista,
